@@ -1,0 +1,34 @@
+ body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: beige;
+    }
+
+    textarea {
+      width: 300px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      margin-bottom: 5px;
+      background-color: #225d68;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .task-content {
+      flex-grow: 1;
+      margin-left: 10px;
+    }
+
+    button {
+      margin-left: 10px;
+    }
