@@ -1,16 +1,5 @@
 <img src="https://socialify.git.ci/dlozilab/task-4.4-starter/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="task-4.4-starter" width="640" height="320" />
 
-Absolutely, Dlozi! Here's the **updated `README.md`** for your **Task 4.4** repo with:
-
-✅ Clear instructions
-✅ Emphasis on **not editing `index.html`**
-✅ Core functionality, including:
-
-* Preventing empty tasks
-* Clearing the input field after a task is added
-  🚫 **No bonus section**
-
----
 
 ### 📄 `README.md` – Final Version
 
