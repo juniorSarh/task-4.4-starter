@@ -1,3 +1,4 @@
+<img src="https://socialify.git.ci/dlozilab/task-4.4-starter/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="task-4.4-starter" width="640" height="320" />
 # 📝 Task 4.4 – Mini Task Tracker
 
 Welcome to your DOM Manipulation Challenge!
