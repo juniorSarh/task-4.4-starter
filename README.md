@@ -3,7 +3,7 @@
 
 ### 📄 `README.md` – Final Version
 
-````markdown
+
 # 📝 Task 4.4 – Mini Task Tracker
 
 ---
@@ -111,11 +111,4 @@ git push origin main
 
 ---
 
-Happy coding!
 
-```
-
----
-
-Let me know if you’d like me to zip this up or prep the GitHub repo structure with all the files so you can push it directly.
-```
