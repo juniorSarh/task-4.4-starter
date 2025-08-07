@@ -6,20 +6,17 @@ LinkElement.href= 'style.css';
 
 const root = document.getElementById("root");
 
-
 const title = document.createElement("h1");
 title.textContent = "The To Do List Task";
 
-
 const textarea = document.createElement("textarea");
-textarea.textContent= "Enter your Task";
-
+textarea.textContent="";
 
 const myButton = document.createElement("button");
 myButton.textContent = "Add Task";
 
 const pendingtask =document.createElement("p");
-pendingtask.textContent="The Remaining Task:";
+pendingtask.textContent="The Remaining Task:"
 
 
 const taskList = document.createElement("ul");
@@ -32,6 +29,13 @@ document.body.appendChild(taskList);
 document.body.appendChild(pendingtask);
 
 
+let count =0;
+
+function updatecount(){
+  count++;
+  pendingtask.textContent = count;
+
+}
 function addTask(taskText) {
   if (taskText.trim() === "") return;
 
@@ -53,12 +57,14 @@ function addTask(taskText) {
       span.style.textDecoration = "none";
       span.style.color = "black";
     }
+    updatecount();
   });
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
   deleteBtn.onclick = function () {
     taskList.removeChild(li);
+    updatecount();
   };
 
   li.appendChild(checkbox);
