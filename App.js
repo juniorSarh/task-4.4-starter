@@ -28,8 +28,7 @@ document.body.appendChild(taskList);
 document.body.appendChild(pendingtask);
 
 let remainingCount = 0;
-
-
+ 
 function updateRemaining() {
   pendingtask.textContent = "Remaining Tasks: " + remainingCount;
 }
@@ -46,7 +45,6 @@ function addTask(taskText) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
 
-  
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
       span.classList.add("done");
@@ -74,7 +72,6 @@ function addTask(taskText) {
     updateRemaining();
   };
 
-  
   li.appendChild(checkbox);
   li.appendChild(span);
   li.appendChild(deleteBtn);
@@ -82,11 +79,9 @@ function addTask(taskText) {
   taskList.appendChild(li);
   textarea.value = "";
 
-  
   remainingCount++;
   updateRemaining();
 }
-
 
 myButton.addEventListener("click", function () {
   addTask(textarea.value);
