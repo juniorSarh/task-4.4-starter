@@ -1,8 +1,8 @@
 // All your DOM manipulation must happen here.
 // You will create and inject all elements into <main id="root"> using JavaScript only.
 const LinkElement = document.createElement('link');
-LinkElement.rel ="stylesheet";
-LinkElement.href= 'style.css';
+LinkElement.rel = "stylesheet";
+LinkElement.href = 'style.css';
 
 const root = document.getElementById("root");
 
@@ -10,14 +10,13 @@ const title = document.createElement("h1");
 title.textContent = "The To Do List Task";
 
 const textarea = document.createElement("textarea");
-textarea.textContent="";
+textarea.value = "";
 
 const myButton = document.createElement("button");
 myButton.textContent = "Add Task";
 
-const pendingtask =document.createElement("p");
-pendingtask.textContent="The Remaining Task:"
-
+const pendingtask = document.createElement("p");
+pendingtask.textContent = "Remaining Tasks: 0";
 
 const taskList = document.createElement("ul");
 
@@ -28,14 +27,13 @@ document.body.appendChild(myButton);
 document.body.appendChild(taskList);
 document.body.appendChild(pendingtask);
 
+let remainingCount = 0;
 
-let count =0;
 
-function updatecount(){
-  count++;
-  pendingtask.textContent = count;
-
+function updateRemaining() {
+  pendingtask.textContent = "Remaining Tasks: " + remainingCount;
 }
+
 function addTask(taskText) {
   if (taskText.trim() === "") return;
 
@@ -47,35 +45,49 @@ function addTask(taskText) {
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
+
+  
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
       span.classList.add("done");
-       span.style.textDecoration = "line-through";
-       span.style.color = "gray";
+      span.style.textDecoration = "line-through";
+      span.style.color = "gray";
+      remainingCount--;
     } else {
       span.classList.remove("done");
       span.style.textDecoration = "none";
       span.style.color = "black";
+      remainingCount++;
     }
-    updatecount();
+    updateRemaining();
   });
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
+
   deleteBtn.onclick = function () {
+    
+    if (!checkbox.checked) {
+      remainingCount--;
+    }
     taskList.removeChild(li);
-    updatecount();
+    updateRemaining();
   };
 
+  
   li.appendChild(checkbox);
   li.appendChild(span);
   li.appendChild(deleteBtn);
 
   taskList.appendChild(li);
   textarea.value = "";
+
+  
+  remainingCount++;
+  updateRemaining();
 }
 
-// Event Listener for Add Task
+
 myButton.addEventListener("click", function () {
   addTask(textarea.value);
 });
